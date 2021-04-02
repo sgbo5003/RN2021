@@ -26,7 +26,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-/* 생명주기 componentDidMount */
+/* 생명주기 componentDidMount & ajax */
 class App extends React.Component {
   constructor() {
     super();
