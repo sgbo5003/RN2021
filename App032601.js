@@ -46,7 +46,7 @@ class App extends React.Component {
   }
 
   render() {
-    let leapyear = <Text>This is not a leapyear!</Text>;
+    let leapyear = <Text style={styles.Text}>This is not a leapyear!</Text>;
     if (this.state.leapYear) {
       leapyear = <Text style={styles.Text}>This is a leapyear!</Text>;
     }

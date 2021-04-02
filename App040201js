@@ -26,7 +26,6 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-/* 구조 분해 할당 */
 class App extends React.Component {
   constructor() {
     super();
@@ -41,18 +40,21 @@ class App extends React.Component {
   }
 
   render() {
-    const {book} = this.state;
-    return <BookDisplay updateBook={() => this.updateBook()} book={book} />;
+    return (
+      <BookDisplay
+        updateBook={() => this.updateBook()}
+        book={this.state.book}
+      />
+    );
   }
 }
 
 class BookDisplay extends React.Component {
   render() {
-    const {book, updateBook} = this.props;
     return (
       <View>
-        <Text style={styles.Text} onPress={updateBook}>
-          {book}
+        <Text style={styles.Text} onPress={this.props.updateBook}>
+          {this.props.book}
         </Text>
       </View>
     );
