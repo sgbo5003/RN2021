@@ -26,7 +26,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-/* 생명주기 */
+/* 생명주기 getDerivedStateFromProps */
 export default class App extends React.Component {
   state = {
     userLoggedIn: false,
