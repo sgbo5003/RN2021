@@ -26,44 +26,30 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-/* 구조 분해 할당 */
-class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      book: 'React Native in Action',
-    };
+/* 생명주기 */
+export default class App extends React.Component {
+  state = {
+    userLoggedIn: false,
+  };
+  static getDerivedStateFromProps(nextProps, nextState) {
+    if (nextProps.authenticated) {
+      return {
+        userLoggedIn: true,
+      };
+    }
+    return null;
   }
-  updateBook() {
-    this.setState({
-      book: 'Express in Action',
-    });
-  }
-
   render() {
-    const {book} = this.state;
-    return <BookDisplay updateBook={() => this.updateBook()} book={book} />;
-  }
-}
-
-class BookDisplay extends React.Component {
-  render() {
-    const {book, updateBook} = this.props;
     return (
-      <View>
-        <Text style={styles.Text} onPress={updateBook}>
-          {book}
-        </Text>
+      <View style={styles.container}>
+        {this.state.userLoggedIn && <AuthenticatedComponent />}
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  header: {},
-  Text: {
-    fontSize: 30,
+  container: {
+    backgroundColor: 'red',
   },
 });
-
-export default App;
