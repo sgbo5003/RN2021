@@ -26,30 +26,30 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-/* 생명주기 */
-export default class App extends React.Component {
-  state = {
-    userLoggedIn: false,
-  };
-  static getDerivedStateFromProps(nextProps, nextState) {
-    if (nextProps.authenticated) {
-      return {
-        userLoggedIn: true,
-      };
-    }
-    return null;
+/* 생명주기 componentWillUnmount */
+class App extends React.Component {
+  constructor() {
+    super();
+  }
+
+  handleClick() {
+    this._timeout = setTimeout(() => {
+      this.openWidget();
+    }, 2000);
+  }
+  componentWillUnmount() {
+    clearTimeout(this._timeout);
   }
   render() {
-    return (
-      <View style={styles.container}>
-        {this.state.userLoggedIn && <AuthenticatedComponent />}
-      </View>
-    );
+    return <SomeComponent handleClick={() => this.handleClick()} />;
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: 'red',
+  header: {},
+  Text: {
+    fontSize: 25,
   },
 });
+
+export default App;
