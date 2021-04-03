@@ -4,7 +4,7 @@
 
 <br>
 
-# **03월 26일**
+# 03월 26일
 
 책 2장(p.65~)
 
@@ -54,3 +54,36 @@ class App extends React.Component {
   }
 }
 ```
+
+# 4월 2일
+
+~p.78
+
+- 코드 작성 시 주의 해야 할 점
+  - 소프트웨어 개발의 원칙
+    - SOLID, DRY, KISS ,YAGNI
+      - DRY 원칙
+        - Don't Repeat Yourself (반복하지 마라)
+- 구조 분해 할당
+  - 자바스크립트의 새로운 특징으로 ES2015 스펙에 추가
+  - 객체에서 속성들을 가져와서 변수로 사용하는 것
+  - 장점
+    - 코드가 간결해진다.
+    - 이해하기 쉬워진다.
+- react life cycle
+  - 마운팅
+    - 생성자
+    - getDerivedStateFromProps
+    - render
+    - componentDidMount
+      - 컴포넌트가 로딩되고 나서 바로 한 번만 호출된다
+      - ajax 호출로 가져온 데이터를 처리
+      - 지정된 실행 후에 실행되는 setTimeout을 처리
+      - 다른 자바스크립트 프레임워크들과 통합
+  - 갱신
+    - shouldComponentUpdate
+      - Boolean을 반환하며, 컴포넌트의 랜더링 할 것인지를 결정
+  - 언마운팅
+    - componentWillUnmount
+      - 앱에서 컴포넌트가 파기되기 전에 호출
+      - 설정된 값을 정리, 리스너를 삭제, 타이머를 제거 하도록 지정
