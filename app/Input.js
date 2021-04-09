@@ -19,13 +19,15 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-const Input = () => (
+const Input = ({inputValue, inputChange}) => (
   <View style={styles.inputContainer}>
     <TextInput
+      value={inputValue}
       style={styles.input}
       placeholder="what needs to be done?"
       placeholderTextColor="#CACACA"
       selectionColor="#666666"
+      onChangeText={inputChange}
     />
   </View>
 );
