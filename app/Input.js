@@ -1,12 +1,14 @@
 import React from 'react';
 import type {Node} from 'react';
 import {
+  Keyboard,
   SafeAreaView,
   ScrollView,
   StatusBar,
   StyleSheet,
   Text,
   TextInput,
+  TouchableWithoutFeedback,
   useColorScheme,
   View,
 } from 'react-native';
