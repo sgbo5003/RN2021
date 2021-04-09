@@ -26,22 +26,15 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import App040204 from './App040204';
+
 /* 생명주기 componentWillUnmount */
 class App extends React.Component {
   constructor() {
     super();
   }
-
-  handleClick() {
-    this._timeout = setTimeout(() => {
-      this.openWidget();
-    }, 2000);
-  }
-  componentWillUnmount() {
-    clearTimeout(this._timeout);
-  }
   render() {
-    return <SomeComponent handleClick={() => this.handleClick()} />;
+    return <App040204 />;
   }
 }
 

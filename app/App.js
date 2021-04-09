@@ -27,6 +27,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import Heading from './Heading';
 import Input from './Input';
+import Button from './Button';
 
 let todoIndex = 0;
 
@@ -38,6 +39,7 @@ class App extends React.Component {
       todos: [],
       type: 'All',
     };
+    this.submitTodo = this.submitTodo.bind(this);
   }
 
   inputChange(inputValue) {
@@ -62,7 +64,7 @@ class App extends React.Component {
     });
   }
   render() {
-    const {inputValue} = this.state;
+    let {inputValue} = this.state;
     return (
       <View style={styles.container}>
         <ScrollView
@@ -73,6 +75,7 @@ class App extends React.Component {
             inputValue={inputValue}
             inputChange={text => this.inputChange(text)}
           />
+          <Button submitTodo={this.submitTodo} />
         </ScrollView>
       </View>
     );
