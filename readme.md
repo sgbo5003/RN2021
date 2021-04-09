@@ -87,3 +87,15 @@ class App extends React.Component {
     - componentWillUnmount
       - 앱에서 컴포넌트가 파기되기 전에 호출
       - 설정된 값을 정리, 리스너를 삭제, 타이머를 제거 하도록 지정
+
+# 4월 9일
+
+## Todo 앱 만들기
+
+- ScrollView
+  - props
+    - `keyboardShouldPersistTaps="always"`
+      - 키보드가 열려 있을 경우 이를 닫고 난 후에 onPress 이벤트를 처리하게 한다.
+      - 키보드가 열려 있을 때 키보드 밖 화면을 터치해서 이벤트가 발생하는 것을 방지한다.
+- submit 버튼 만들어서 event 처리
+  - `<touchableHighlight></touchableHighlight>`
