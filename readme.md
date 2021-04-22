@@ -99,3 +99,11 @@ class App extends React.Component {
       - 키보드가 열려 있을 때 키보드 밖 화면을 터치해서 이벤트가 발생하는 것을 방지한다.
 - submit 버튼 만들어서 event 처리
   - `<touchableHighlight></touchableHighlight>`
+
+# 4월 16일
+
+## Todo 앱 만들기
+
+- 탭 바 만들기
+  - todo 목록 전체를 표시해 주거나, 완료되었거나 작업 중인 todo만을 선택적으로 표시해 줍니다.
+  - TabBar.js & TabBarItem.js
