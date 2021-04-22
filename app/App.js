@@ -79,7 +79,7 @@ class App extends React.Component {
     this.setState({todos});
   }
   toggleComplete(todoIndex) {
-    let {todos} = this.state.todos;
+    let todos = this.state.todos;
     todos.forEach(todo => {
       if (todo.todoIndex === todoIndex) {
         todo.complete = !todo.complete;
