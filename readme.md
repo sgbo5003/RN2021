@@ -107,3 +107,79 @@ class App extends React.Component {
 - 탭 바 만들기
   - todo 목록 전체를 표시해 주거나, 완료되었거나 작업 중인 todo만을 선택적으로 표시해 줍니다.
   - TabBar.js & TabBarItem.js
+
+# 4월 23일
+
+## 중간고사
+
+- props 활용해서 뿌려주기 test
+
+# 4월 30일
+
+## 스타일 구성하기
+
+- 스타일 구성하는 방법
+
+  - 컴포넌트 내에 스타일시트 선언하기
+
+    ```jsx
+    import {StyleSheet} from 'react-native';
+
+    const styles = StyleSheet.create({
+      container: {
+        marginTop: 150,
+        backgroundColor: '#ededed',
+        flexWrap: 'wrap',
+      },
+    });
+
+    const buttons = StyleSheet.create({
+      primary: {
+        flex: 1,
+        height: 70,
+        backgroundColor: 'red',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginLeft: 20,
+        marginRight: 20,
+      },
+    });
+
+    export {styles, buttons};
+    ```
+
+  - 컴포넌트 파일과는 별도의 스타일 시트 선언하기
+
+    ```jsx
+    import getStyleSheet from './styles';
+    ```
+
+- binding의 이해
+
+  - 객체의 외부에서 사용할 때 binding을 해서 사용해야 한다.
+  - React에서는 constructor에서 binding을 하는 것이 일반적이다.
+
+  ```jsx
+  let foo = {
+    prop: 'Hello',
+    bar: function () {
+      console.log(this.prop);
+    },
+  };
+
+  foo.bar(); //"Hello"
+
+  let fooBar = foo.bar.bind(foo);
+  fooBar();
+  ```
+
+- 밝은색과 어두운색 테마를 토글하는 앱 만들기
+
+  - 밝은색 테마
+
+    <img src="https://user-images.githubusercontent.com/61876422/117280265-63a83a80-ae9d-11eb-8b1a-91431031930e.PNG" width="300" height="500">
+
+  - 어두운색 테마
+
+    <img src="https://user-images.githubusercontent.com/61876422/117280769-e5986380-ae9d-11eb-8cc9-12e3cc89623e.PNG"
+    width="300" height="500">
