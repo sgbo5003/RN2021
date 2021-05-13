@@ -4,6 +4,61 @@
 
 <br>
 
+# 5월 7일
+
+## 중간고사 리뷰
+
+중간고사 내용 리뷰
+
+## 구조 분해 할당
+
+- 구조 분해 할당
+
+  - 배열이나 객체의 속성을 해체하여, 그 값을 개별 변수에 담을 수 있게 하는 JavaScript 표현식
+  - 기본 변수 할당
+
+    ```jsx
+    var foo = ['one', 'two', 'three'];
+
+    var [one, two, three] = foo;
+    console.log(one); // "one"
+    console.log(two); // "two"
+    console.log(three); // "three"
+    ```
+
+  - 함수가 반환한 배열 분석
+
+    ```jsx
+    function f() {
+      return [1, 2];
+    }
+
+    var a, b;
+    [a, b] = f();
+    console.log(a); // 1
+    console.log(b); // 2
+    ```
+
+  - 객체 구조 분해
+
+    ```jsx
+    var o = {p: 42, q: true};
+    var {p, q} = o;
+
+    console.log(p); // 42
+    console.log(q); // true
+    ```
+
+  - 새로운 변수 이름으로 할당하기
+
+    ```jsx
+    var o = {p: 42, q: true};
+    var {p: foo, q: bar} = o;
+
+    console.log(foo); // 42
+    console.log(bar); // true
+    ```
+
 # 4월 30일
 
 ## 스타일 구성하기
