@@ -1,31 +1,27 @@
 import React, {Component} from 'react';
 import {Text, View, StyleSheet, Button} from 'react-native';
-import getStyleSheet from './styles';
 
 export default class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      darkTheme: false,
-    };
-    this.toggleTheme = this.toggleTheme.bind(this);
-  }
-
-  toggleTheme() {
-    this.setState({darkTheme: !this.state.darkTheme});
-  }
-
   render() {
-    const styles = getStyleSheet(this.state.darkTheme);
-    const backgroundColor = StyleSheet.flatten(styles.container)
-      .backgroundColor;
-
     return (
       <View style={styles.container}>
-        <View style={styles.box}>
-          <Button title={backgroundColor} onPress={this.toggleTheme} />
-        </View>
+        <View style={styles.cardContainer} />
       </View>
     );
   }
 }
+
+const profileCardColor = 'dodgerblue';
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  cardContainer: {
+    backgroundColor: profileCardColor,
+    width: 300,
+    height: 400,
+  },
+});
