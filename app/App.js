@@ -1,55 +1,48 @@
 import React, {Component} from 'react';
-import {Text, View, StyleSheet} from 'react-native';
+import {Text, View, StyleSheet, Image} from 'react-native';
 
 class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Example style={{borderRadius: 20}}>
-          <CenteredText>Example 1:{'\n'}4 Rounded Corners</CenteredText>
-        </Example>
-        <Example
-          style={{borderTopRightRadius: 60, borderBottomRightRadius: 60}}>
-          <CenteredText>Example 2:{'\n'}D Shape</CenteredText>
-        </Example>
-        <Example style={{borderTopLeftRadius: 30, borderBottomRightRadius: 30}}>
-          <CenteredText>Example 3:{'\n'}Leaf Shape</CenteredText>
-        </Example>
-        <Example style={{borderRadius: 60}}>
-          <CenteredText>Example 4:{'\n'}Circle</CenteredText>
-        </Example>
+        <View style={styles.cardContainer}>
+          <View style={styles.cardImageContainer}>
+            <Image style={styles.cardImage} source={require('./user.png')} />
+          </View>
+        </View>
       </View>
     );
   }
 }
 
-const Example = props => (
-  <View style={[styles.example, props.style]}>{props.children}</View>
-);
-
-const CenteredText = props => (
-  <Text style={[styles.centeredText, props.style]}>{props.children}</Text>
-);
+const profileCardColor = 'dodgerblue';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    marginTop: 75,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  example: {
+  cardContainer: {
+    borderColor: 'black',
+    borderWidth: 3,
+    borderStyle: 'solid',
+    borderRadius: 20,
+    backgroundColor: profileCardColor,
+    width: 300,
+    height: 400,
+  },
+  cardImageContainer: {
+    backgroundColor: 'white',
+    borderWidth: 3,
+    borderColor: 'black',
     width: 120,
     height: 120,
-    marginLeft: 20,
-    marginBottom: 20,
-    backgroundColor: 'grey',
-    borderWidth: 2,
-    justifyContent: 'center',
+    borderRadius: 60,
   },
-  centeredText: {
-    textAlign: 'center',
-    margin: 10,
+  cardImage: {
+    width: 80,
+    height: 80,
   },
 });
 
