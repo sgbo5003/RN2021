@@ -4,6 +4,62 @@
 
 <br>
 
+# 5월 14일
+
+> border styles
+
+- props 로 스타일 전달
+
+  ```jsx
+  class App extends Component {
+    render() {
+      return (
+        <Example style={{borderWidth: 1}}>
+          <Text>borderWidth: 1</Text>
+        </Example>
+      );
+    }
+  }
+  const Example = props => (
+    <View style={[styles.example, props.style]}>{props.children}</View>
+  );
+  ```
+
+- border-width
+  - border 굵기
+- border-style
+  - border style
+- borderRadious
+  - border의 둥근정도
+
+> import image
+
+- image를 삽입하는 방법
+
+  ```jsx
+  import {Image} from 'react-native';
+  <Image style={styles.cardImage} source={require('./user.png')} />;
+  ```
+
+> margin
+
+- marginTop
+- marginBottom
+- marginLeft
+- marginRight
+
+> padding
+
+- paddingTop
+- paddingBottom
+- paddingLeft
+- paddingRight
+
+> position
+
+- position : relative
+- position : absolute
+
 # 5월 7일
 
 ## 중간고사 리뷰
