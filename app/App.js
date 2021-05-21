@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, View, StyleSheet, Image} from 'react-native';
+import {Text, View, StyleSheet, Image, Platform} from 'react-native';
 
 class App extends Component {
   render() {
@@ -66,6 +66,14 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 24,
     marginTop: 30,
+    ...Platform.select({
+      ios: {
+        fontFamily: 'American Typewriter',
+      },
+      android: {
+        fontFamily: 'monospace',
+      },
+    }),
   },
   cardOccupationContainer: {
     borderColor: 'black',
