@@ -63,6 +63,8 @@ const styles = StyleSheet.create({
   },
   cardName: {
     color: 'white',
+    fontWeight: 'bold',
+    fontSize: 24,
     marginTop: 30,
   },
   cardOccupationContainer: {
@@ -73,10 +75,12 @@ const styles = StyleSheet.create({
     borderLeftWidth: 0,
   },
   cardOccupation: {
+    fontWeight: 'bold',
     marginTop: 10,
     marginBottom: 10,
   },
   cardDescription: {
+    fontStyle: 'italic',
     marginHorizontal: 40,
     marginVertical: 10,
   },
