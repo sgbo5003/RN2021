@@ -4,6 +4,53 @@
 
 <br>
 
+# 5월 21일
+
+> 복습
+
+margin, padding, position 복습
+
+> font family 지정하기
+
+- css와는 다르게 fontFamily속성에 여러가지를 지정 할 수 없다.
+- 기본 폰트 외에 다른 폰트를 사용하려면
+  - 리엑트 네이티브의 **Platform** 컴포넌트를 이용
+
+> Platform 사용 예시
+
+```jsx
+import {Platform} from 'react native';
+
+cardName: {
+...Platform.select({
+	ios: {
+		fontFamily: 'American Typewriter',
+	},
+	android: {
+		fontFamily: 'monospace',
+	},
+}),
+},
+```
+
+> 기본 폰트 속성
+
+- fontSize
+- fontStyle
+- fontWeight
+
+> shadow
+
+- ios에서는 shadowColor, shadowOffset, shadowOpacity
+- 안드로이드에서는 사용 x
+  - elevation 속성으로 약간의 음영 효과
+
+> navigation
+
+- 앱의 가장 핵심기능 중 하나
+- 대표적인 navigation 종류
+  - tab navigation, stack navigation, drawer navigation
+
 # 5월 14일
 
 > border styles
