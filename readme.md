@@ -4,6 +4,62 @@
 
 <br>
 
+# 5월 28일
+
+> NaviApp 프로젝트 생성
+
+- `react-native init NaviApp`
+
+> react-navigation v5 설치
+
+- `npm install @react-navigation/native`
+- `npm install react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view`
+
+> stack navigator 설치
+
+- `npm install @react-navigation/stack`
+
+> Tab navigator 설치
+
+- `npm install @react-navigation/bottom-tabs`
+
+> drawer navigator 설치
+
+- `npm install @react-navigation/drawer`
+
+> Expo vs React-native CLI
+
+- React-native CLI의 특징
+  - RN개발진들이 운영하고 있어서 업데이트가 빠르다
+  - native 언어인 java, kotln과 swift 사용 가능
+  - 안드로이드는 Android studio, ios Xcode가 있어야 한다.
+- Expo의 특징
+  - 쉬운 build system
+  - Android studio, Xcode 없이도 Expo SDK를 이용해 빌드 및 테스트가 가능하다.
+  - expo 앱을 이용하면 자신의 스마트폰에서 직접 결과 확인이 가능
+  - MacBook없이도 ios 환경도 빌드가 가능하다.
+  - 카메라, 위치, 알림, 센서 등에 접근할 수 있는 라이브러리가 존재
+  - 언제든지 React-native-CLI로 변환이 가능. eject
+  - 상대적으로 업데이트가 느리다
+  - native 환경에서 사용하는 third party 라이브러리를 사용할 수 없다는 한계
+
+> expo cli 설치하기
+
+- `npm install -g expo-cli`
+- `expo --version`
+
+> Project 생성하기
+
+- `expo init [projectName]`
+
+> App 실행
+
+- `expo start`
+
+> MaterialBottomTab 설치
+
+- `npm install @react-navigation/material-bottom-tabs react-native-paper`
+
 # 5월 21일
 
 > 복습
