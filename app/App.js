@@ -1,128 +1,57 @@
-import React, {Component} from 'react';
-import {Text, View, StyleSheet, Image, Platform} from 'react-native';
+import React, {createContext, Component} from 'react';
+import {Text, View, StyleSheet} from 'react-native';
 
+const ThemeContext = React.createContext();
 class App extends Component {
+  state = {themeValue: 'light'};
+  toggleThemeValue = () => {
+    const value = this.state.themeValue === 'dark' ? 'light' : 'dark';
+    this.setState({themeValue: value});
+  };
   render() {
     return (
-      <View style={styles.container}>
-        <View style={styles.cardContainer}>
-          <View style={styles.cardImageContainer}>
-            <Image style={styles.cardImage} source={require('./user.png')} />
-          </View>
-          <View>
-            <Text style={styles.cardName}>John Doe</Text>
-          </View>
-          <View style={styles.cardOccupationContainer}>
-            <Text style={styles.cardOccupation}>React Native Developer</Text>
-          </View>
-          <View>
-            <Text style={styles.cardDescription}>
-              John is a really great JavaScript developer. He loves using JS to
-              build React Native applications for iOS and Android.
-            </Text>
-          </View>
+      <ThemeContext.Provider
+        value={{
+          themeValue: this.state.themeValue,
+          toggleThemeValue: this.toggleThemeValue,
+        }}>
+        <View style={styles.container}>
+          <Text>Hello World</Text>
         </View>
-      </View>
+        <Child1 />
+      </ThemeContext.Provider>
     );
   }
 }
 
-const profileCardColor = 'dodgerblue';
+const Child1 = () => <Child2 />;
+const Child2 = () => (
+  <ThemeContext.Consumer>
+    {val => (
+      <View
+        style={[
+          styles.container,
+          val.themeValue === 'dark' && {backgroundColor: 'black'},
+        ]}>
+        <Text style={styles.text}>Hello from Component2</Text>
+        <Text style={styles.text} onPress={val.toggleThemeValue}>
+          Toggle Theme Value
+        </Text>
+      </View>
+    )}
+  </ThemeContext.Consumer>
+);
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#F5FCFF',
   },
-  cardContainer: {
-    alignItems: 'center',
-    borderColor: 'black',
-    borderWidth: 3,
-    borderStyle: 'solid',
-    borderRadius: 20,
-    backgroundColor: profileCardColor,
-    width: 300,
-    height: 400,
-    ...Platform.select({
-      ios: {
-        shadowColor: 'black',
-        shadowOffset: {
-          height: 10,
-        },
-        shadowOpacity: 1,
-      },
-      android: {
-        elevation: 15,
-      },
-    }),
-  },
-  cardImageContainer: {
-    alignItems: 'center',
-    backgroundColor: 'white',
-    borderWidth: 3,
-    borderColor: 'black',
-    width: 120,
-    height: 120,
-    borderRadius: 60,
-    marginTop: 30,
-    paddingTop: 15,
-    paddingRight: 6,
-    ...Platform.select({
-      ios: {
-        shadowColor: 'black',
-        shadowOffset: {
-          height: 10,
-        },
-        shadowOpacity: 1,
-      },
-      android: {
-        borderWidth: 3,
-        borderColor: 'black',
-        elevation: 15,
-      },
-    }),
-  },
-  cardImage: {
-    width: 80,
-    height: 80,
-  },
-  cardName: {
-    color: 'white',
-    fontWeight: 'bold',
-    fontSize: 24,
-    marginTop: 30,
-    textShadowColor: 'black',
-    textShadowOffset: {
-      height: 2,
-      width: 2,
-    },
-    textShadowRadius: 3,
-    ...Platform.select({
-      ios: {
-        fontFamily: 'American Typewriter',
-      },
-      android: {
-        fontFamily: 'monospace',
-      },
-    }),
-  },
-  cardOccupationContainer: {
-    borderColor: 'black',
-    borderWidth: 3,
-    borderTopWidth: 0,
-    borderRightWidth: 0,
-    borderLeftWidth: 0,
-  },
-  cardOccupation: {
-    fontWeight: 'bold',
-    marginTop: 10,
-    marginBottom: 10,
-  },
-  cardDescription: {
-    fontStyle: 'italic',
-    marginHorizontal: 40,
-    marginVertical: 10,
+  text: {
+    fontSize: 22,
+    color: '#666',
   },
 });
 
